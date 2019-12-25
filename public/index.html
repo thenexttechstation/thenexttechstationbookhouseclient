@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="logo192.png" />
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Satisfy&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Orbitron&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Cabin+Sketch&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Monoton&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Vast+Shadow&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Cabin+Sketch|Fredericka+the+Great|Sirin+Stencil&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Long+Cang|Love+Ya+Like+A+Sister&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lakki+Reddy&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Aladin&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+              font-family: "Cabin Sketch", cursive;
+
+    -->
+    <title>React App</title>
+    <style>
+      h3 {
+        font-family: "Aladin", cursive;
+        color: rgb(3, 3, 3);
+      }
+
+      h2 {
+        font-family: "Orbitron", sans-serif;
+        color: rgb(243, 232, 232);
+      }
+
+      h4 {
+        font-family: "Love Ya Like A Sister", cursive;
+        color: rgb(238, 232, 232);
+      }
+      h5 {
+        font-family: "Lakki Reddy", cursive;
+        color: black;
+      }
+
+      div.polaroid {
+        width: 80%;
+        background-color: white;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+          0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        margin-bottom: 25px;
+      }
+      img {
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 5px;
+        width: 150px;
+      }
+
+      div.container {
+        text-align: center;
+        padding: 10px 20px;
+      }
+
+      body {
+        background-color: #e9e9e9;
+        font-family: "Montserrat", sans-serif;
+        font-size: 16px;
+        line-height: 1.25;
+        letter-spacing: 1px;
+      }
+
+      * {
+        box-sizing: border-box;
+        transition: 0.25s all ease;
+      }
+
+      .login-container {
+        display: block;
+        position: relative;
+        z-index: 0;
+        margin: 4rem auto 0;
+        padding: 5rem 4rem 0 4rem;
+        width: 100%;
+        max-width: 525px;
+        min-height: 680px;
+        background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/283591/login-background.jpg);
+        box-shadow: 0 50px 70px -20px rgba(0, 0, 0, 0.85);
+      }
+
+      .login-container:after {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        z-index: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-image: radial-gradient(
+          ellipse at left bottom,
+          rgba(22, 24, 47, 1) 0%,
+          rgba(38, 20, 72, 0.9) 59%,
+          rgba(17, 27, 75, 0.9) 100%
+        );
+        box-shadow: 0 -20px 150px -20px rgba(0, 0, 0, 0.5);
+      }
+
+      .form-login {
+        position: relative;
+        z-index: 1;
+        padding-bottom: 4.5rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+      }
+
+      .login-nav {
+        position: relative;
+        padding: 0;
+        margin: 0 0 6em 1rem;
+      }
+
+      .login-nav__item {
+        list-style: none;
+        display: inline-block;
+      }
+
+      .login-nav__item + .login-nav__item {
+        margin-left: 2.25rem;
+      }
+
+      .login-nav__item a {
+        position: relative;
+        color: rgba(255, 255, 255, 0.5);
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: 500;
+        font-size: 1.25rem;
+        padding-bottom: 0.5rem;
+        transition: 0.2s all ease;
+      }
+
+      .login-nav__item.active a,
+      .login-nav__item a:hover {
+        color: #ffffff;
+        transition: 0.15s all ease;
+      }
+
+      .login-nav__item a:after {
+        content: "";
+        display: inline-block;
+        height: 10px;
+        background-color: rgb(255, 255, 255);
+        position: absolute;
+        right: 100%;
+        bottom: -1px;
+        left: 0;
+        border-radius: 50%;
+        transition: 0.15s all ease;
+      }
+
+      .login-nav__item a:hover:after,
+      .login-nav__item.active a:after {
+        background-color: rgb(17, 97, 237);
+        height: 2px;
+        right: 0;
+        bottom: 2px;
+        border-radius: 0;
+        transition: 0.2s all ease;
+      }
+      .login__label {
+        display: block;
+        padding-left: 1rem;
+      }
+
+      .login__label,
+      .login__label--checkbox {
+        color: rgba(255, 255, 255, 0.5);
+        text-transform: uppercase;
+        font-size: 0.75rem;
+        margin-bottom: 1rem;
+      }
+
+      .login__label--checkbox {
+        display: inline-block;
+        position: relative;
+        padding-left: 1.5rem;
+        margin-top: 2rem;
+        margin-left: 1rem;
+        color: #ffffff;
+        font-size: 0.75rem;
+        text-transform: inherit;
+      }
+
+      .login__input {
+        color: white;
+        font-size: 1.15rem;
+        width: 100%;
+        padding: 0.5rem 1rem;
+        border: 2px solid transparent;
+        outline: none;
+        border-radius: 1.5rem;
+        background-color: rgba(255, 255, 255, 0.25);
+        letter-spacing: 1px;
+      }
+
+      .login__input:hover,
+      .login__input:focus {
+        color: white;
+        border: 2px solid rgba(255, 255, 255, 0.5);
+        background-color: transparent;
+      }
+
+      .login__input + .login__label {
+        margin-top: 1.5rem;
+      }
+
+      .login__input--checkbox {
+        position: absolute;
+        top: 0.1rem;
+        left: 0;
+        margin: 0;
+      }
+
+      .login__submit {
+        color: #ffffff;
+        font-size: 1rem;
+        font-family: "Orbitron", sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-top: 2rem;
+        padding: 0.75rem;
+        border-radius: 2rem;
+        display: block;
+        width: 100%;
+        background-color: rgba(118, 7, 133, 0.75);
+        border: darkolivegreen;
+        cursor: pointer;
+      }
+
+      .login__submit:hover {
+        background-color: rgb(110, 113, 119);
+      }
+
+      .login__forgot {
+        display: block;
+        margin-top: 3rem;
+        text-align: center;
+        color: rgba(255, 255, 255, 0.75);
+        font-size: 0.75rem;
+        text-decoration: none;
+        position: relative;
+        z-index: 1;
+      }
+
+      .login__forgot:hover {
+        color: rgb(17, 97, 237);
+      }
+      .form-horizontal {
+        margin: 10%;
+      }
+
+      .container {
+        border: 2px solid rgb(218, 226, 236);
+        margin: 10%;
+        /*Change the image to your liking by changing the image src*/
+        background-image: url();
+        background-size: cover;
+
+        box-shadow: 5px 10px black;
+      }
+
+      .containererror {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+
+      .error404page {
+        width: 400px;
+        height: 800px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .body404,
+      .head404,
+      .eyes404,
+      .leftarm404,
+      .rightarm404,
+      .chair404,
+      .leftshoe404,
+      .rightshoe404,
+      .legs404,
+      .laptop404 {
+        background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/15979/404-character-new.png)
+          0 0 no-repeat;
+        width: 200px;
+        height: 200px;
+      }
+
+      .newcharacter404,
+      .torso404,
+      .body404,
+      .head404,
+      .eyes404,
+      .leftarm404,
+      .rightarm404,
+      .chair404,
+      .leftshoe404,
+      .rightshoe404,
+      .legs404,
+      .laptop404 {
+        background-size: 750px;
+        position: absolute;
+        display: block;
+      }
+
+      .newcharacter404 {
+        width: 400px;
+        height: 800px;
+        left: 50%;
+        top: 20px;
+        margin-left: -200px;
+      }
+
+      $swayspeed: 20s;
+
+      .torso404 {
+        position: absolute;
+        display: block;
+        top: 138px;
+        left: 0px;
+        width: 389px;
+        height: 252px;
+        animation: sway $swayspeed ease infinite;
+        transform-origin: 50% 100%;
+      }
+
+      .body404 {
+        position: absolute;
+        display: block;
+        top: 0px;
+        left: 0px;
+        width: 389px;
+        height: 253px;
+      }
+
+      .head404 {
+        position: absolute;
+        top: -148px;
+        left: 106px;
+        width: 160px;
+        height: 194px;
+        background-position: 0px -265px;
+        transform-origin: 50% 85%;
+        animation: headTilt $swayspeed ease infinite;
+      }
+
+      .eyes404 {
+        position: absolute;
+        top: 92px;
+        left: 34px;
+        width: 73px;
+        height: 18px;
+        background-position: -162px -350px;
+        animation: blink404 10s steps(1) infinite, pan 10s ease-in-out infinite;
+      }
+
+      .leftarm404 {
+        position: absolute;
+        top: 159px;
+        left: 0;
+        width: 165px;
+        height: 73px;
+        background-position: -265px -341px;
+        transform-origin: 9% 35%;
+        transform: rotateZ(0deg);
+        animation: typeLeft 0.4s linear infinite;
+      }
+
+      .rightarm404 {
+        position: absolute;
+        top: 148px;
+        left: 231px;
+        width: 157px;
+        height: 91px;
+        background-position: -442px -323px;
+        transform-origin: 90% 25%;
+        animation: typeLeft 0.4s linear infinite;
+      }
+
+      .chair404 {
+        position: absolute;
+        top: 430px;
+        left: 55px;
+        width: 260px;
+        height: 365px;
+        background-position: -12px -697px;
+      }
+
+      .legs404 {
+        position: absolute;
+        top: 378px;
+        left: 4px;
+        width: 370px;
+        height: 247px;
+        background-position: -381px -443px;
+      }
+
+      .leftshoe404 {
+        position: absolute;
+        top: 591px;
+        left: 54px;
+        width: 130px;
+        height: 92px;
+        background-position: -315px -749px;
+      }
+
+      .rightshoe404 {
+        position: absolute;
+        top: 594px;
+        left: 187px;
+        width: 135px;
+        height: 81px;
+        background-position: -453px -749px;
+        transform-origin: 35% 12%;
+        animation: tapRight 1s linear infinite;
+      }
+
+      .laptop404 {
+        position: absolute;
+        top: 186px;
+        left: 9px;
+        width: 365px;
+        height: 216px;
+        background-position: -2px -466px;
+        transform-origin: 50% 100%;
+        animation: tapWobble 0.4s linear infinite;
+      }
+      @keyframes sway {
+        0% {
+          transform: rotateZ(0deg);
+        }
+        20% {
+          transform: rotateZ(0deg);
+        }
+        25% {
+          transform: rotateZ(4deg);
+        }
+        45% {
+          transform: rotateZ(4deg);
+        }
+        50% {
+          transform: rotateZ(0deg);
+        }
+        70% {
+          transform: rotateZ(0deg);
+        }
+        75% {
+          transform: rotateZ(-4deg);
+        }
+        90% {
+          transform: rotateZ(-4deg);
+        }
+        100% {
+          transform: rotateZ(0deg);
+        }
+      }
+
+      @keyframes headTilt {
+        0% {
+          transform: rotateZ(0deg);
+        }
+        20% {
+          transform: rotateZ(0deg);
+        }
+        25% {
+          transform: rotateZ(-4deg);
+        }
+        35% {
+          transform: rotateZ(-4deg);
+        }
+        38% {
+          transform: rotateZ(2deg);
+        }
+        42% {
+          transform: rotateZ(2deg);
+        }
+        45% {
+          transform: rotateZ(-4deg);
+        }
+        50% {
+          transform: rotateZ(0deg);
+        }
+        70% {
+          transform: rotateZ(0deg);
+        }
+        82% {
+          transform: rotateZ(0deg);
+        }
+        85% {
+          transform: rotateZ(4deg);
+        }
+        90% {
+          transform: rotateZ(4deg);
+        }
+        100% {
+          transform: rotateZ(0deg);
+        }
+      }
+
+      @keyframes typeLeft {
+        0% {
+          transform: rotateZ(0deg);
+        }
+        25% {
+          transform: rotateZ(7deg);
+        }
+        75% {
+          transform: rotateZ(-6deg);
+        }
+        100% {
+          transform: rotateZ(0deg);
+        }
+      }
+
+      @keyframes typeRight {
+        0% {
+          transform: rotateZ(0deg);
+        }
+        25% {
+          transform: rotateZ(-6deg);
+        }
+        75% {
+          transform: rotateZ(7deg);
+        }
+        100% {
+          transform: rotateZ(0deg);
+        }
+      }
+
+      @keyframes tapWobble {
+        0% {
+          transform: rotateZ(-0.2deg);
+        }
+        50% {
+          transform: rotateZ(0.2deg);
+        }
+        100% {
+          transform: rotateZ(-0.2deg);
+        }
+      }
+
+      @keyframes tapRight {
+        0% {
+          transform: rotateZ(0deg);
+        }
+        90% {
+          transform: rotateZ(-6deg);
+        }
+        100% {
+          transform: rotateZ(0deg);
+        }
+      }
+
+      @keyframes blink404 {
+        0% {
+          background-position: -162px -350px;
+        }
+        94% {
+          background-position: -162px -350px;
+        }
+        98% {
+          background-position: -162px -368px;
+        }
+        100% {
+          background-position: -162px -350px;
+        }
+      }
+
+      @keyframes pan {
+        0% {
+          transform: translateX(-2px);
+        }
+        49% {
+          transform: translateX(-2px);
+        }
+        50% {
+          transform: translateX(2px);
+        }
+        99% {
+          transform: translateX(2px);
+        }
+        100% {
+          transform: translateX(-2px);
+        }
+      }
+
+      body {
+        background: #310404 url(https://bookhouse.s3.amazonaws.com/fvc.jpeg)
+          no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        font-family: "Barlow", sans-serif;
+      }
+      #shoppage {
+        background: white;
+      }
+      .shop {
+        padding-bottom: 150;
+      }
+      #categorycheckbox {
+        margin-left: 20 !important;
+      }
+
+      col-4 {
+        background-color: white;
+      }
+
+      input:focus {
+        outline: none;
+      }
+      /* bootstrap dropdown hover menu*/
+      body {
+        font-family: "PT Sans", sans-serif;
+        font-size: 13px;
+        font-weight: 400;
+        color: #4f5d6e;
+        position: relative;
+        background: rgb(26, 49, 95);
+        background: -webkit-gradient(
+          linear,
+          left top,
+          left bottom,
+          color-stop(0%, rgba(26, 49, 95, 1)),
+          color-stop(10%, rgba(26, 49, 95, 1)),
+          color-stop(24%, rgba(29, 108, 141, 1)),
+          color-stop(37%, rgba(41, 136, 151, 1)),
+          color-stop(77%, rgba(39, 45, 100, 1)),
+          color-stop(90%, rgba(26, 49, 95, 1)),
+          color-stop(100%, rgba(26, 49, 95, 1))
+        );
+        filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#1a315f', endColorstr='#1a315f', GradientType=0);
+      }
+
+      .body-wrap {
+        min-height: 700px;
+      }
+
+      .body-wrap {
+        position: relative;
+        z-index: 0;
+      }
+
+      .body-wrap:before,
+      .body-wrap:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: -1;
+        height: 260px;
+        background: -webkit-gradient(
+          linear,
+          left top,
+          left bottom,
+          color-stop(0%, rgba(26, 49, 95, 1)),
+          color-stop(100%, rgba(26, 49, 95, 0))
+        );
+        background: linear-gradient(
+          to bottom,
+          rgba(26, 49, 95, 1) 0%,
+          rgba(26, 49, 95, 0) 100%
+        );
+        filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#1a315f', endColorstr='#001a315f', GradientType=0);
+      }
+
+      .body-wrap:after {
+        top: auto;
+        bottom: 0;
+        background: linear-gradient(
+          to bottom,
+          rgba(26, 49, 95, 0) 0%,
+          rgba(26, 49, 95, 1) 100%
+        );
+        filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#001a315f', endColorstr='#1a315f', GradientType=0);
+      }
+
+      nav {
+        margin-top: 60px;
+        box-shadow: 5px 4px 5px #000;
+      }
+
+      .wrapper {
+        margin: 0 auto 100px auto;
+        max-width: 960px;
+      }
+
+      .stage {
+        list-style: none;
+        padding: 0;
+      }
+      .scene {
+        width: 260px;
+        height: 400px;
+        margin: 30px;
+        float: left;
+        perspective: 1000px;
+      }
+      .movie {
+        width: 260px;
+        height: 400px;
+        transform-style: preserve-3d;
+        transform: translateZ(-130px);
+        transition: transform 350ms;
+      }
+      .movie:hover {
+        transform: rotateY(-78deg) translateZ(20px);
+      }
+      .movie .poster,
+      .movie .info {
+        position: absolute;
+        width: 260px;
+        height: 400px;
+        background-color: #fff;
+        backface-visibility: hidden;
+      }
+
+      .movie .poster {
+        transform: translateZ(130px);
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+
+      .movie .info {
+        transform: rotateY(90deg) translateZ(130px);
+        border: 1px solid #b8b5b5;
+        font-size: 0.75em;
+      }
+
+      .movie::after {
+        content: "";
+        width: 260px;
+        height: 260px;
+        position: absolute;
+        bottom: 0;
+        box-shadow: 0 30px 50px rgba(0, 0, 0, 0.3);
+        transform-origin: 100% 100%;
+        transform: rotateX(90deg) translateY(130px);
+        transition: box-shadow 350ms;
+      }
+
+      .movie:hover::after {
+        box-shadow: 20px -5px 50px rgba(0, 0, 0, 0.3);
+      }
+
+      .info header {
+        color: #fff;
+        padding: 7px 10px;
+        font-weight: bold;
+        height: 160px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        text-shadow: 0px 1px 1px rgba(0, 0, 0, 1);
+      }
+
+      .info header h1 {
+        margin: 0 0 2px;
+        font-size: 1.4em;
+      }
+
+      .info header .rating {
+        border: 1px solid #fff;
+        padding: 0px 3px;
+      }
+
+      .info p {
+        padding: 1.2em 1.4em;
+        margin: 2px 0 0;
+        font-weight: 700;
+        color: #666;
+        line-height: 1.4em;
+        border-top: 10px solid #555;
+      }
+      .movie .poster,
+      .movie .info,
+      .movie .info header {
+        transition: box-shadow 350ms;
+      }
+
+      .movie .poster {
+        box-shadow: inset 0px 0px 40px rgba(255, 255, 255, 0);
+      }
+
+      .movie:hover .poster {
+        box-shadow: inset 300px 0px 40px rgba(255, 255, 255, 0.8);
+      }
+
+      .movie .info,
+      .movie .info header {
+        box-shadow: inset -300px 0px 40px rgba(0, 0, 0, 0.5);
+      }
+
+      .movie:hover .info,
+      .movie:hover .info header {
+        box-shadow: inset 0px 0px 40px rgba(0, 0, 0, 0);
+      }
+      .scene:nth-child(1) .movie .poster {
+        background-image: url(https://bookhouse.s3.amazonaws.com/books/60.jpg);
+      }
+
+      .scene:nth-child(2) .poster {
+        background-image: url(https://bookhouse.s3.amazonaws.com/books/120.jpg);
+      }
+
+      .scene:nth-child(3) .poster {
+        background-image: url(https://bookhouse.s3.amazonaws.com/books/32.jpg);
+      }
+      .scene:nth-child(4) .poster {
+        background-image: url(https://bookhouse.s3.amazonaws.com/books/107.jpg);
+      }
+
+      .scene:nth-child(1) .info header {
+        background-image: url(https://bookhouse.s3.amazonaws.com/books/60.jpg);
+      }
+
+      .scene:nth-child(2) .info header {
+        background-image: url(https://bookhouse.s3.amazonaws.com/14.jpg);
+      }
+
+      .scene:nth-child(3) .info header {
+        background-image: url(../img/still03.jpg);
+      }
+
+      .registration form {
+        width: 800px;
+        height: 400px;
+        background-color: white;
+        padding: 10px 0px 0px 4px;
+        -moz-border-radius: 15px;
+        -webkit-border-radius: 15px;
+        color: black;
+        text-transform: uppercase;
+        font-size: 11px;
+        font-weight: bold;
+        font-family: "Century Gothic";
+      }
+
+      .registration input,
+      .registration select {
+        width: 195px;
+        height: 20px;
+        margin: 3px 0px 0px 10px;
+        border: 0px;
+        font-weight: bold;
+      }
+
+      .registration input:focus {
+        background-color: orange;
+      }
+
+      .registration form label {
+        margin: 5px 0px 0px 15px;
+      }
+
+      a {
+        outline: none;
+      }
+
+      .register_button {
+        width: 149px;
+        height: 42px;
+        background-color: orange;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+        margin: 15px auto 0px auto;
+        text-align: center;
+        cursor: pointer;
+        clear: both;
+      }
+
+      .register_button span {
+        font-weight: normal;
+        font-size: 28px;
+        font-family: "Impact";
+        line-height: 40px;
+      }
+      .register_button span a {
+        text-decoration: none;
+        color: green;
+      }
+      .register_button span a:hover {
+        color: black;
+      }
+
+      span.error {
+        margin-right: 20px;
+        font-size: 9px;
+        color: orange;
+        height: 10px;
+      }
+
+      p.error {
+        margin: 0px 14px 0px 10px;
+        font-size: 9px;
+        color: orange;
+        height: 6px;
+        padding: 0px 0px 8px 0px;
+        text-align: right;
+        text-transform: none;
+      }
+    </style>
+    <script
+      async
+      src="https://pay.google.com/gp/p/js/pay.js"
+      onload="onGooglePayLoaded()"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"
+    ></script>
+
+    <script>
+      $("ul.nav li.dropdown").hover(
+        function() {
+          $(this)
+            .find(".dropdown-menu")
+            .stop(true, true)
+            .delay(200)
+            .fadeIn(500);
+        },
+        function() {
+          $(this)
+            .find(".dropdown-menu")
+            .stop(true, true)
+            .delay(200)
+            .fadeOut(500);
+        }
+      );
+    </script>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  </body>
+</html>
