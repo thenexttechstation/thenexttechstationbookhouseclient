@@ -4,7 +4,7 @@ import BookHouseFooter from "./BookHouseFooter";
 
 import BookHouseBottomMenu from "./BookHouseBottomMenu";
 
-import "../styles.css";
+//import "../styles.css";
 
 const BookHouseLayout = ({
   pagetitle = "Title",
